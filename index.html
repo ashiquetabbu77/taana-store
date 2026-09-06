@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Taana — Handloom textiles, woven to last</title>
+<meta name="description" content="Taana is a handloom textile studio — sarees, stoles, cushion covers and table linen woven by artisan clusters across India." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="#top" class="logo">Taana</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#shop">Shop</a>
+      <a href="#story">Our story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-toggle" id="cartToggle" aria-haspopup="dialog" aria-controls="cartDrawer">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span>Bag</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Handloom, from the loom to your home</p>
+        <h1>Every thread<br>carries a hand<br>that placed it.</h1>
+        <p class="hero-lede">Taana works with eleven weaving clusters across Bengal, Chanderi and Kutch to bring handloom sarees, stoles and home linen to a wider table — woven the slow way, priced fairly for the weaver.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn btn-primary">Shop the edit</a>
+          <a href="#story" class="btn btn-ghost">Meet the weavers</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>11</dt><dd>weaving clusters</dd></div>
+          <div><dt>240+</dt><dd>artisan families</dd></div>
+          <div><dt>0%</dt><dd>power looms used</dd></div>
+        </dl>
+      </div>
+      <div class="hero-weave" aria-hidden="true">
+        <div class="weave-panel weave-1"></div>
+        <div class="weave-panel weave-2"></div>
+        <div class="weave-panel weave-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="wrap">
+      <h2 class="section-label">Shop by category</h2>
+      <div class="cat-row" id="categoryRow"></div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <h2>The full collection</h2>
+        <div class="shop-controls">
+          <select id="filterCategory" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+          <select id="sortOrder" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="story-visual" aria-hidden="true">
+        <div class="weave-panel weave-4"></div>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">Our story</p>
+        <h2>A loom takes four days to say what a machine says in four minutes.</h2>
+        <p>We think that difference is worth paying for. Taana was started in 2019 after a visit to a weaving village in Nadia district, where handloom sarees were being sold for less than the cost of the yarn. We now work directly with weaver cooperatives, pay above market rate, and put the weaver's name on every piece we sell.</p>
+        <blockquote>"My mother wove on this same loom. Taana is the first place that ever asked me to sign my work."<cite>— Rina Das, Shantipur weaving cluster</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="logo footer-logo">Taana</p>
+        <p class="footer-tag">Handloom textiles, woven to last.<br>Made in India, worn everywhere.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <p>Taana Studio<br>Shahpur Jat, New Delhi 110049</p>
+      </div>
+      <div>
+        <h3>Write to us</h3>
+        <p><a href="mailto:hello@taana.example">hello@taana.example</a><br>+91 98xxx xxxxx</p>
+      </div>
+      <div>
+        <h3>Stay woven in</h3>
+        <form class="newsletter" id="newsletterForm">
+          <label for="newsletterEmail" class="sr-only">Email address</label>
+          <input type="email" id="newsletterEmail" placeholder="Your email" required>
+          <button type="submit">Join</button>
+        </form>
+        <p class="newsletter-note" id="newsletterNote" role="status"></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>&copy; 2026 Taana Studio. A demo storefront built for portfolio purposes.</p>
+    </div>
+  </footer>
+
+</main>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Shopping bag" aria-modal="true">
+  <div class="drawer-head">
+    <h2>Your bag</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Close bag">&times;</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="subtotal-row">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">₹0</span>
+    </div>
+    <p class="drawer-note">Shipping and taxes calculated at checkout.</p>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Proceed to checkout</button>
+  </div>
+</aside>
+
+<!-- PRODUCT MODAL -->
+<div class="overlay" id="productOverlay"></div>
+<div class="modal product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+  <button class="icon-btn modal-close" id="closeProductModal" aria-label="Close">&times;</button>
+  <div id="productModalBody"></div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOverlay"></div>
+<div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+  <button class="icon-btn modal-close" id="closeCheckoutModal" aria-label="Close">&times;</button>
+  <div id="checkoutBody"></div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
